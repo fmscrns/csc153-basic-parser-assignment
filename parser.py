@@ -14,12 +14,13 @@ while True:
             start = True
             awaiting_alphanum = False
 
-            for char in _str:
+            for count, char in enumerate(_str):
                 if char is " ":
                     start = True
                     awaiting_alphanum = False
+
                     remaining = remaining + char
-                
+
                 else:
                     if start is True and identifier == "":
                         if char.isalpha():
@@ -87,7 +88,7 @@ while True:
 
                     start = False
 
-            print([(natural, remaining)]) if natural else print([])
+            print([(int(natural), remaining)]) if natural else print([])
 
         else:
             print("Syntax error. Try again.")
